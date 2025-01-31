@@ -1,24 +1,19 @@
 import { useState } from "react";
 import { Button } from "../components";
 
-export const Card = ({ image, description, price, productName }) => {
-  const [cartCount, setCartCount] = useState(0);
-
-  const addToCart = () => {
-    setCartCount((prevCount) => prevCount + 1);
-  };
+export const Card = ({ product }) => {
+  const { name, price, image } = product;
 
   return (
-    <div className="md:max-w-80 p-4 rounded bg-slate-200 m-4">
-      <img src={image} alt={productName} />
-      <div>
-        <p className="text-center">{description}</p>
+    <div className="productCard max-w-80 rounded bg-slate-100">
+      <img src={image} alt={name} className="rounded" />
+      <p className="name">{name}</p>
+      <div className="action flex">
+        <p>${price}</p>
+        <button className="bg-blue-500 text-white rounded p-2 ml-44">
+          Add To Cart
+        </button>
       </div>
-      <div className="flex flex-row justify-center space-x-32">
-        <span className="text-xl p-2 bg-slate-100 rounded">${price}</span>
-        <Button text="Add to Cart" onClick={addToCart} />
-      </div>
-      {/* <p>Cart: {cartCount}</p> */}
     </div>
   );
 };
