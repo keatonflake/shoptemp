@@ -1,4 +1,4 @@
-import { Card } from "../components";
+import { ProductCard } from "../components";
 
 export const Home = () => {
   const products = [
@@ -44,7 +44,7 @@ export const Home = () => {
     <main>
       <section className="products flex flex-wrap gap-4 m-4">
         {products.map((product) => (
-          <Card key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} />
         ))}
       </section>
     </main>

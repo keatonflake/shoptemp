@@ -1,7 +1,4 @@
-import { useState } from "react";
-import { Button } from "../components";
-
-export const Card = ({ product }) => {
+export const ProductCard = ({ product }) => {
   const { name, price, image } = product;
 
   return (
