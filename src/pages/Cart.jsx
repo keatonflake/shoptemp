@@ -1,6 +1,8 @@
+import { useCart } from "../context/CartContext";
 import { CartCard } from "../components";
 
 export const Cart = () => {
+  const { total } = useCart();
   const products = [
     {
       id: 1,
@@ -19,7 +21,9 @@ export const Cart = () => {
   return (
     <main>
       <section className="cart">
-        <h1>Cart Items: {products.length}</h1>
+        <h1 className="text-black">
+          Cart Items: {products.length} | ${total}
+        </h1>
         {products.map((product) => (
           <CartCard key={product.id} product={product} />
         ))}

@@ -1,6 +1,6 @@
 export const ProductCard = ({ product }) => {
   const { name, price, image } = product;
-
+  // const []
   return (
     <div className="productCard max-w-80 rounded bg-slate-100">
       <img src={image} alt={name} className="rounded" />
