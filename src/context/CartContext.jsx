@@ -1,15 +1,21 @@
 import { createContext, useContext } from "react";
 
-const CartContext = createContext({
-  total: 1000,
-});
+const initailState = {
+  cartList: [],
+  total: 0,
+};
+
+const CartContext = createContext(initailState);
 
 export const CartProvider = ({ children }) => {
-  return (
-    <CartContext.Provider value={{ total: 0 }}>{children}</CartContext.Provider>
-  );
+  const value = {
+    total: 1000,
+  };
+
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
 
 export const useCart = () => {
-  return useContext(CartContext);
+  const context = useContext(CartContext);
+  return context;
 };
