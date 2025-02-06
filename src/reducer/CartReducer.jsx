@@ -3,17 +3,14 @@ export const cartReducer = (state, action) => {
 
   switch (type) {
     case "ADD_TO_CART":
-      return { ...state, cart: [...state.cart, { ...payload, qty: 1 }] };
+      return;
+
     case "REMOVE_FROM_CART":
-      return { ...state, cart: state.cart.filter((c) => c.id !== payload.id) };
-    case "CHANGE_CART_QTY":
-      return {
-        ...state,
-        cart: state.cart.filter((c) =>
-          c.id === payload.id ? (c.qty = payload.qty) : c.qty
-        ),
-      };
+      return;
+
+    case "UPDATE_TOTAL":
+      return;
     default:
-      return state;
+      throw new Error(`No case for type ${type}`);
   }
 };
