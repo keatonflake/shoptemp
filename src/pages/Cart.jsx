@@ -2,28 +2,14 @@ import { useCart } from "../context/CartContext";
 import { CartCard } from "../components";
 
 export const Cart = () => {
-  const { total } = useCart();
-  const products = [
-    {
-      id: 1,
-      name: "Sony Wh-Ch510 Bluetooth Wireless",
-      price: 149,
-      image: "/images/1001.png",
-    },
-    {
-      id: 2,
-      name: "boAt Rockerz 450",
-      price: 49,
-      image: "./images/1002.png",
-    },
-  ];
+  const { cartList: products, total } = useCart();
 
   return (
     <main>
       <section className="cart">
-        <h1 className="text-black">
+        <div className="flex justify-center text-white text-2xl py-2 px-4 bg-gradient-to-r from-blue-500 to-purple-500">
           Cart Items: {products.length} | ${total}
-        </h1>
+        </div>
         {products.map((product) => (
           <CartCard key={product.id} product={product} />
         ))}

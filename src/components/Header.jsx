@@ -2,8 +2,10 @@ import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import Logo from "../assets/images/logo.svg";
 import CartIcon from "../assets/images/cart.svg";
+import { useCart } from "../context/CartContext";
 
 export const Header = () => {
+  const { cartList } = useCart();
   const activeClass = "text-xl md:mr-12 bg-slate-100 p-2 rounded";
   const inActiveClass = "text-xl md:mr-12 p-2";
 
@@ -30,7 +32,7 @@ export const Header = () => {
       </nav>
       <Link to="/cart" className="hidden md:flex">
         <img src={CartIcon} className="mr-2 h-8 sm:h-9" alt="Cart Icon" />
-        <span className="py-2">Cart: 2</span>
+        <span className="py-2">{cartList.length}</span>
       </Link>
     </header>
   );

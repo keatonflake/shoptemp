@@ -42,7 +42,7 @@ export const Home = () => {
 
   return (
     <main>
-      <section className="products flex flex-wrap gap-4 m-4">
+      <section className="products flex flex-wrap justify-center gap-4 m-4">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

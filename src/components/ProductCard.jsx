@@ -5,6 +5,7 @@ export const ProductCard = ({ product }) => {
   const { name, price, image } = product;
 
   function handleClick() {
+    console.log("clicked");
     addToCart(product);
   }
 
@@ -16,7 +17,7 @@ export const ProductCard = ({ product }) => {
         <p>${price}</p>
         <button
           onClick={handleClick}
-          className="bg-blue-500 text-white rounded p-2 ml-44"
+          className="bg-blue-400 text-white rounded p-2 ml-44 hover:border-2 hover:border-blue-400 hover:bg-slate-100 hover:text-black"
         >
           Add To Cart
         </button>
